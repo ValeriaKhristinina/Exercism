@@ -7,25 +7,16 @@ struct Squares {
 	}
 	
 	var squareOfSum: Int {
-		let a = number
-		var b = 0
+		let result = (1...number).reduce(0, +)
 		
-		for i in 1...a {
-			b += i
-		}
-		
-		b *= b
-		return b
+		return result * result
 	}
 	
 	var sumOfSquares: Int {
-		let a = number
-		var b = 0
+		let result = (1...number).map {$0 * $0}
+		let sum = result.reduce(0, +)
 		
-		for i in 1...a {
-			b += i*i
-		}
-		return b
+		return sum
 	}
 	
 	var differenceOfSquares : Int {
